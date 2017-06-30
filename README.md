@@ -26,6 +26,10 @@ You should locate binary of plasma-mackerel-plugin to any directory.
 command = "/path/to/plasma-mackerel-plugin -host=127.0.0.1:9999"
 ```
 
+## Graph
+
+![Graph](metrics.png)
+
 License
 ===
 See [LICENSE](LICENSE).
