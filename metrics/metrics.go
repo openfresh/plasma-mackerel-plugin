@@ -15,12 +15,14 @@ type PlasmaMetricsClient interface {
 
 type PlasmaMetricsClientImpl struct {
 	metricsHost string
+	metricsPort int
 	httpCli     *http.Client
 }
 
-func NewPlasmaMetricsClient(metricsHost string) PlasmaMetricsClient {
+func NewPlasmaMetricsClient(metricsPort int) PlasmaMetricsClient {
 	return &PlasmaMetricsClientImpl{
-		metricsHost: metricsHost,
+		metricsHost: "127.0.0.1",
+		metricsPort: metricsPort,
 		httpCli: &http.Client{
 			Timeout: 3 * time.Second,
 		},
@@ -29,7 +31,7 @@ func NewPlasmaMetricsClient(metricsHost string) PlasmaMetricsClient {
 
 func (c *PlasmaMetricsClientImpl) GetMetrics() (map[string]interface{}, error) {
 
-	metricsURL := fmt.Sprintf("http://%s/metrics/plasma", c.metricsHost)
+	metricsURL := fmt.Sprintf("http://%s:%d/metrics/plasma", c.metricsHost, c.metricsPort)
 	req, err := http.NewRequest("GET", metricsURL, nil)
 	if err != nil {
 		return nil, errors.Wrapf(err, "Create request is failed. [%s]", metricsURL)

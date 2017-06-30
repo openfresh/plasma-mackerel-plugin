@@ -8,6 +8,8 @@ import (
 
 	"strings"
 
+	"strconv"
+
 	"github.com/stretchr/testify/assert"
 )
 
@@ -20,10 +22,13 @@ func TestGetMetrics(t *testing.T) {
 	}))
 	defer ts.Close()
 
-	host := strings.Replace(ts.URL, "http://", "", -1)
-	host = strings.Replace(host, "/metrics/plasma", "", -1)
+	port := strings.Replace(ts.URL, "http://127.0.0.1:", "", -1)
+	port = strings.Replace(port, "/metrics/plasma", "", -1)
 
-	cli := NewPlasmaMetricsClient(host)
+	portNo, err := strconv.Atoi(port)
+	assert.NoError(err)
+
+	cli := NewPlasmaMetricsClient(portNo)
 	res, err := cli.GetMetrics()
 	assert.NoError(err, "")
 
