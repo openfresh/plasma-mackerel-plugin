@@ -23,7 +23,7 @@ You should locate binary of plasma-mackerel-plugin to any directory.
 
 ```
 [plugin.metrics.plasma]
-command = "/path/to/plasma-mackerel-plugin -host=127.0.0.1:9999"
+command = "/path/to/plasma-mackerel-plugin -port=9999"
 ```
 
 ## Graph
