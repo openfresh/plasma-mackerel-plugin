@@ -5,7 +5,6 @@ plasma-mackerel-plugin
 [![Language](https://img.shields.io/badge/language-go-brightgreen.svg?style=flat)](https://golang.org/)
 [![issues](https://img.shields.io/github/issues/openfresh/plasma-mackerel-plugin.svg?style=flat)](https://github.com/openfresh/plasma-mackerel-plugin/issues?state=open)
 [![License: MIT](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
-[![imagelayers.io](https://badge.imagelayers.io/openfresh/plasma-mackerel-plugin:latest.svg)](https://imagelayers.io/?images=openfresh/plasma-mackerel-plugin:latest 'Get your own badge on imagelayers.io')
 
 
 This mackerel plugin provides [Plasma](https://github.com/openfresh/plasma) connection metrics.
