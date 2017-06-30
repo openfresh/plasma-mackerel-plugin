@@ -1,0 +1,4 @@
+deployment:
+  release:
+    tag: /tag-.*/
+    owner: openfresh
